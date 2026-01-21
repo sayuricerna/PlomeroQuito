@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<section class="blogs-hero">
+    <h1>Blog de Plomería en Quito</h1>
+    <p>
+        Consejos, zonas de servicio y soluciones profesionales de plomería
+        en Quito y sus alrededores.
+    </p>
+</section>
+
+<section class="blogs-list-section">
+    <div class="blogs-grid">
+
+        {{ range .Pages.ByTitle }}
+        <article class="blog-card">
+            <h2>
+                <a href="{{ .Permalink }}">
+                    {{ .Title }}
+                </a>
+            </h2>
+
+            {{ if .Description }}
+            <p class="blog-excerpt">
+                {{ .Description }}
+            </p>
+            {{ else }}
+            <p class="blog-excerpt">
+                Servicio profesional de plomería en Quito con atención inmediata.
+            </p>
+            {{ end }}
+
+            <a href="{{ .Permalink }}" class="blog-read-more">
+                Leer más →
+            </a>
+        </article>
+        {{ end }}
+
+    </div>
+</section>
+
+{{ end }}

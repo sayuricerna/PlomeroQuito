@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<section class="single-hero">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Description }}
+    <p class="single-description">
+        {{ .Description }}
+    </p>
+    {{ end }}
+</section>
+
+<section class="single-content">
+
+    <article class="content-box">
+        {{ .Content }}
+    </article>
+
+    <aside class="single-cta">
+        <h3>¿Necesitas un plomero ahora?</h3>
+        <p>Atención inmediata 24/7 en Quito.</p>
+
+        <a href="tel:{{ .Site.Params.telefono }}" class="cta-btn call">
+            📞 Llamar ahora
+        </a>
+
+        <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="cta-btn whatsapp">
+            💬 WhatsApp
+        </a>
+    </aside>
+
+</section>
+{{ partial "faq.html" . }}
+{{ partial "schema-faq.html" . }}
+
+<section class="single-back">
+    {{ if eq .Section "blogs" }}
+        <a href="/blogs/" class="back-link">← Volver a blogs</a>
+    {{ else if eq .Section "servicios" }}
+        <a href="/#servicios" class="back-link">← Volver a servicios</a>
+    {{ else }}
+        <a href="/" class="back-link">← Volver al inicio</a>
+    {{ end }}
+</section>
+
+{{ end }}

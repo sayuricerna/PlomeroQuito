@@ -1,0 +1,72 @@
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Marca -->
+        <div class="footer-brand">
+            <h3>Plomero Quito 24/7</h3>
+            <p>
+                Servicio profesional de plomería en Quito.
+                Atención inmediata para emergencias, destapes,
+                fugas de agua y calefones.
+            </p>
+        </div>
+
+        <!-- Servicios -->
+        <div class="footer-links">
+            <h4>Servicios</h4>
+            <ul>
+                <li><a href="/#servicios">Destape de cañerías</a></li>
+                <li><a href="/#servicios">Reparación de fugas</a></li>
+                <li><a href="/#servicios">Instalación de sanitarios</a></li>
+                <li><a href="/#servicios">Reparación de calefones</a></li>
+                <li><a href="/#servicios">Plomería 24 horas</a></li>
+            </ul>
+        </div>
+
+        <!-- Zonas -->
+        <div class="footer-links">
+            <h4>Zonas de Servicio</h4>
+            <ul>
+                <li><a href="/blogs/plomero-norte-de-quito/">Norte de Quito</a></li>
+                <li><a href="/blogs/plomero-sur-de-quito/">Sur de Quito</a></li>
+                <li><a href="/blogs/plomero-centro-historico-de-quito/">Centro de Quito</a></li>
+                <li><a href="/blogs/plomero-en-cumbaya-tumbaco/">Cumbayá y Tumbaco</a></li>
+                <li><a href="/blogs/">Ver todas las zonas</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p>📍 {{ .Site.Params.direccion }}</p>
+            <p>
+                📞 <a href="tel:{{ .Site.Params.telefono }}">
+                    {{ .Site.Params.telefono }}
+                </a>
+            </p>
+            <p>
+                💬 <a href="https://wa.me/{{ .Site.Params.whatsapp }}">
+                    WhatsApp 24/7
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © {{ now.Year }} Plomero Quito.
+            Todos los derechos reservados.
+        </p>
+    </div>
+
+    <!-- WhatsApp flotante -->
+<a href="https://wa.me/{{ .Site.Params.whatsapp }}"
+   class="whatsapp-float"
+   aria-label="WhatsApp">
+    <img src="/images/whatsapp.png" alt="WhatsApp">
+</a>
+
+
+
+</footer>

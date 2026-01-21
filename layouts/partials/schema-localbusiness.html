@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Plomero Quito 24/7",
+  "image": "{{ "images/hero.jpg" | absURL }}",
+  "url": "{{ .Site.BaseURL }}",
+  "telephone": "{{ .Site.Params.telefono }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Quito",
+    "addressCountry": "EC"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Quito"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://wa.me/{{ .Site.Params.whatsapp }}"
+  ]
+}
+</script>

@@ -1,0 +1,172 @@
+{{ define "main" }}
+
+{{ $hero := resources.Get "images/hero.jpg" }}
+{{ $hero = $hero.Fit "1920x1440" }}
+{{ $plomero := resources.Get "images/plomero.jpg" }}
+{{ $plomero = $plomero.Fit "800x800" }}
+<section class="hero-section"
+    style="background-image:
+    linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+    url('{{ $hero.RelPermalink }}');">
+
+    <div class="hero-content">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Content }}</p>
+
+        <div class="hero-buttons">
+            <a href="tel:{{ .Site.Params.telefono }}" class="btn-tel">
+                📞 {{ .Site.Params.telefono }}
+            </a>
+            <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-wa">
+                WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="services-section" id="servicios">
+    <h2 class="section-title">
+        Servicios de Plomería Profesional en Quito
+    </h2>
+
+    <p class="section-subtitle">
+        Contamos con plomeros certificados en Quito para atender emergencias y trabajos programados
+        en hogares, edificios y negocios, las 24 horas del día.
+    </p>
+
+    <div class="services-grid">
+
+        <article class="service-card">
+            <h3>Destape de Cañerías en Quito</h3>
+            <p>
+                Eliminamos obstrucciones en fregaderos, sanitarios, duchas y cajas de revisión
+                utilizando máquinas eléctricas profesionales, sin romper pisos.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Reparación de Fugas de Agua</h3>
+            <p>
+                Detectamos y reparamos fugas ocultas en tuberías de cobre, PVC y PPR,
+                evitando daños estructurales y facturas elevadas de agua.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Instalación de Sanitarios y Grifería</h3>
+            <p>
+                Instalamos inodoros, lavabos, duchas, mezcladoras y grifería moderna,
+                garantizando un sellado perfecto y funcionamiento óptimo.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Reparación e Instalación de Calefones</h3>
+            <p>
+                Servicio técnico especializado en calefones a gas y eléctricos
+                (Bosch, Splendid, Yang, entre otros).
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Mantenimiento de Plomería Residencial</h3>
+            <p>
+                Revisiones preventivas de tuberías, llaves, válvulas y desagües
+                para evitar emergencias futuras.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Plomería Comercial y Edificios</h3>
+            <p>
+                Atención especializada para restaurantes, locales comerciales,
+                oficinas y edificios residenciales en Quito.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Instalación de Bombas y Cisternas</h3>
+            <p>
+                Instalación, reparación y mantenimiento de bombas de agua,
+                tanques elevados y sistemas de presión.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3>Emergencias de Plomería 24/7</h3>
+            <p>
+                Atendemos inundaciones, tuberías rotas y filtraciones graves
+                en cualquier sector de Quito, a cualquier hora.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+
+
+<section class="about-section" id="nosotros">
+    <div class="about-container">
+
+        <div class="about-text">
+            <h2>Plomeros Profesionales en Quito con Atención 24/7</h2>
+
+            <p>
+                Somos un equipo de <strong>plomeros certificados en Quito</strong> con amplia experiencia
+                en servicios de plomería residencial, comercial y de emergencias.
+                Atendemos filtraciones, destapes, calefones e instalaciones con rapidez y garantía.
+            </p>
+
+            <p>
+                Trabajamos en el norte, sur y valles de Quito, brindando soluciones duraderas,
+                precios claros y atención inmediata las 24 horas del día.
+            </p>
+
+            <ul class="about-list">
+                <li>✔ Más de 10 años de experiencia en plomería</li>
+                <li>✔ Atención inmediata en todo Quito</li>
+                <li>✔ Técnicos capacitados y herramientas profesionales</li>
+                <li>✔ Garantía en todos nuestros trabajos</li>
+            </ul>
+
+            <div class="about-buttons">
+                <a href="tel:{{ .Site.Params.telefono }}" class="btn-tel">
+                    📞 Llámanos ahora
+                </a>
+                <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-wa">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="about-image">
+            <img src="{{ $plomero.RelPermalink }}"
+     alt="Plomero profesional trabajando en Quito">
+        </div>
+
+    </div>
+</section>
+
+
+{{ partial "faq.html" . }}
+
+<section class="seo-sectors" id="zonas">
+    <h2>Zonas de Servicio de Plomería en Quito</h2>
+
+    <p class="seo-sectors-description">
+        Atendemos servicios de plomería en todos los sectores de Quito.
+        Haz clic en tu zona para conocer más detalles.
+    </p>
+
+    <div class="sectors-list">
+        {{ range (where .Site.RegularPages "Section" "blogs") }}
+            <a href="{{ .Permalink }}" class="sector-link">
+                {{ .Title }}
+            </a>
+        {{ end }}
+    </div>
+</section>
+
+
+{{ end }}

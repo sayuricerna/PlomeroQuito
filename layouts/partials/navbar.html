@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <a href="/" class="logo">
+            <span>Plomero</span><strong>Quito</strong>
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- LINKS -->
+        <ul class="nav-links">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/blogs/">Blogs</a></li>
+            <li>
+                <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-nav">
+                    Contactar ahora
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<!-- JS pequeño solo para el menú -->
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+        links.classList.toggle('active');
+        toggle.classList.toggle('active');
+    });
+</script>

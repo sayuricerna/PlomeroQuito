@@ -1,0 +1,38 @@
+<!-- 
+{{ with .Params.faqs }}
+<section class="faq-section" id="faq">
+    <h2 class="faq-section-title">
+        Preguntas Frecuentes sobre {{ $.Title }}
+    </h2>
+
+    <p class="faq-section-subtitle">
+        Resolvemos las dudas más comunes sobre este servicio de plomería.
+    </p>
+
+    <div class="faq-container">
+        {{ range . }}
+        <details>
+            <summary>{{ .pregunta }}</summary>
+            <p>{{ .respuesta }}</p>
+        </details>
+        {{ end }}
+    </div>
+</section>
+{{ end }} -->
+
+{{ if .Params.faqs }}
+<section class="faq-section" id="faq">
+    <h2 class="section-title">
+        Preguntas Frecuentes
+    </h2>
+
+    <div class="faq-container">
+        {{ range .Params.faqs }}
+        <details>
+            <summary>{{ .pregunta }}</summary>
+            <p>{{ .respuesta }}</p>
+        </details>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
