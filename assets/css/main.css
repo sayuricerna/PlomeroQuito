@@ -124,7 +124,7 @@ body {
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
     .nav-toggle {
         display: flex;
@@ -145,6 +145,50 @@ body {
 
     .nav-links.active {
         display: flex;
+        margin-top: 0;
+    }
+} */
+ /* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background: var(--azul-oscuro);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* Quitamos el gap para controlar el espacio con padding */
+        padding: 0;
+        display: none;
+        margin: 0; /* Eliminamos márgenes que empujan el menú */
+        border-top: 1px solid rgba(255,255,255,0.1); /* Opcional: una línea sutil */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Estilo para el botón dentro del menú móvil para que no flote */
+    .nav-links .btn-nav {
+        margin: 20px 0;
+        display: inline-block;
+        max-width: 50%;
     }
 }
 
