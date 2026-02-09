@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.plomeroquito24h\.com [NC]
+RewriteRule ^(.*)$ https://plomeroquito24h.com/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^plomeroquito24h\.com$ [NC]
+RewriteRule ^(.*)$ https://plomeroquito24h.com/$1 [R=301,L]
