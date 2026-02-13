@@ -7,14 +7,14 @@
         </a>
 
         <!-- BOTÓN HAMBURGUESA -->
-        <button class="nav-toggle" aria-label="Abrir menú">
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
         <!-- LINKS -->
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="/">Inicio</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/blogs/">Blogs</a></li>
@@ -28,13 +28,25 @@
     </div>
 </nav>
 
-<!-- JS pequeño solo para el menú -->
 <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-    toggle.addEventListener('click', () => {
-        links.classList.toggle('active');
-        toggle.classList.toggle('active');
+navToggle.addEventListener("click", function (e) {
+    e.stopPropagation(); 
+    navLinks.classList.toggle("active");
+});
+
+document.addEventListener("click", function (e) {
+    if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+        navLinks.classList.remove("active");
+    }
+});
+
+const links = navLinks.querySelectorAll("a");
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
     });
+});
 </script>

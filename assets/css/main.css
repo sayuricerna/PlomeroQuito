@@ -720,7 +720,7 @@ SOBRE NOSOTROS
 /* ===== SINGLE PAGE ===== */
 
 .single-hero {
-    padding: 90px 8% 40px;
+    padding: 5% 8% 40px;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
     text-align: center;
@@ -761,8 +761,9 @@ SOBRE NOSOTROS
 }
 
 .single-cta {
-    background: #0000000b;
-    padding: 35px;
+    background: #ffffff0b;
+    padding: 1rem 35px 1rem;
+    margin: 1rem;
     border-radius: 25px;
     box-shadow: var(--sombra);
     position: sticky;
@@ -772,11 +773,14 @@ SOBRE NOSOTROS
 
 .single-cta h3 {
     margin-bottom: 10px;
-    color: #1f2937;
+    color: #ffffff;
 }
 
 .single-cta p {
     margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 0;
+
 }
 
 .cta-btn {
@@ -790,13 +794,17 @@ SOBRE NOSOTROS
 }
 
 .cta-btn.call {
-    background: var(--azul-oscuro);
+    background: var(--amarillo);
     color: white;
+    width: 40%;
+    margin: 0 auto 12px;
 }
 
 .cta-btn.whatsapp {
     background: #18b050;
     color: white;
+    width: 40%;
+    margin: 0 auto 12px;
 }
 
 .cta-btn:hover {
@@ -826,6 +834,10 @@ SOBRE NOSOTROS
 
     .single-cta {
         position: static;
+    
+    }
+    .cta-btn.whatsapp, .cta-btn.call{
+        width: 100%;
     }
 }
 
