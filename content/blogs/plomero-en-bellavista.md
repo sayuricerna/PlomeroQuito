@@ -32,11 +32,11 @@ Si buscas un **plomero en Bellavista Quito**, estás en el lugar correcto. Ofrec
 
 Trabajamos con herramientas modernas y personal capacitado para garantizar soluciones rápidas y duraderas.
 
-## 🚨 Plomería urgente en Bellavista 24/7
+##  Plomería urgente en Bellavista 24/7
 
 Atendemos **emergencias de plomería en Bellavista** como tuberías rotas, inundaciones y baños tapados, incluso fines de semana y feriados.
 
-## 📞 Contáctanos ahora
+##  Contáctanos ahora
 
 No dejes que un problema de plomería empeore.  
 👉 **Atención inmediata en Bellavista Quito.**

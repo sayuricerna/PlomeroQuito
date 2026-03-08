@@ -38,14 +38,16 @@
         <!-- Contacto -->
         <div class="footer-contact">
             <h4>Contacto</h4>
-            <p>📍 {{ .Site.Params.direccion }}</p>
+            <p><i class="bi bi-geo-alt"></i> {{ .Site.Params.direccion }}</p>
             <p>
-                📞 <a href="tel:{{ .Site.Params.telefono }}">
+                <!-- icono amarillo de teléfono -->
+                
+                <i class="bi bi-telephone"></i><a href="tel:{{ .Site.Params.telefono }}" style="color: white;">
                     {{ .Site.Params.telefono }}
                 </a>
             </p>
             <p>
-                💬 <a href="https://wa.me/{{ .Site.Params.whatsapp }}">
+                <i class="bi bi-whatsapp"></i><a href="https://wa.me/{{ .Site.Params.whatsapp }}" style="color: white;">
                     WhatsApp 24/7
                 </a>
             </p>
@@ -58,7 +60,7 @@
             © {{ now.Year }} Plomero Quito.
             Todos los derechos reservados.
             Desarrollador: <a href="https://github.com/sayuricerna" target="_blank" rel="noopener noreferrer">
-                Sayuri Cerna
+                Desarrollador
         </p>
     </div>
 

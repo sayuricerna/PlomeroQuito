@@ -13,20 +13,53 @@
         <p>Atención inmediata 24/7 en Quito.</p>
 
         <a href="tel:{{ .Site.Params.telefono }}" class="cta-btn call">
-            📞 Llamar ahora
+            <i class="bi bi-telephone"></i> Llamar ahora
         </a>
 
         <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="cta-btn whatsapp">
-            💬 WhatsApp
+            <i class="bi bi-whatsapp"></i> WhatsApp
         </a>
     </aside>
 </section>
 
-<section class="single-content">
-    <article class="content-box">
-        {{ .Content }}
-    </article>
+<section class="single-content-wrapper">
+    <div class="single-content-grid">
+        <!-- CONTENIDO PRINCIPAL -->
+        <article class="content-box">
+            {{ .Content }}
+        </article>
+
+        <!-- SIDEBAR CON BLOGS ALEATORIOS -->
+        {{ if eq .Section "blogs" }}
+        <aside class="sidebar-related">
+            <h3 class="sidebar-title"><i class="bi bi-geo-alt"></i> Otras Zonas de Quito</h3>
+            <div class="related-blogs">
+                {{ $currentPage := . }}
+                {{ $randomBlogs := where .Site.RegularPages "Section" "blogs" | shuffle | first 3 }}
+                
+                {{ range $randomBlogs }}
+                    {{ if ne .Permalink $currentPage.Permalink }}
+                    <a href="{{ .Permalink }}" class="related-blog-card">
+                        <h4>{{ .Title }}</h4>
+                        <p>Servicio de plomería profesional →</p>
+                    </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+
+            <!-- CTA ADICIONAL -->
+            <div class="sidebar-cta">
+                <h4><i class="bi bi-exclamation-triangle-fill"></i> Emergencia 24/7</h4>
+                <p>Atendemos todo Quito</p>
+                <a href="tel:{{ .Site.Params.telefono }}" class="sidebar-cta-btn">
+                    <i class="bi bi-telephone"></i> {{ .Site.Params.telefono }}
+                </a>
+            </div>
+        </aside>
+        {{ end }}
+    </div>
 </section>
+
 {{ partial "faq.html" . }}
 {{ partial "schema-faq.html" . }}
 

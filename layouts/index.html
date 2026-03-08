@@ -1,9 +1,9 @@
 {{ define "main" }}
-
 {{ $hero := resources.Get "images/hero.jpg" }}
 {{ $hero = $hero.Fit "1920x1440" }}
 {{ $plomero := resources.Get "images/plomero.jpg" }}
 {{ $plomero = $plomero.Fit "800x800" }}
+
 <section class="hero-section"
     style="background-image:
     linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
@@ -15,10 +15,10 @@
 
         <div class="hero-buttons">
             <a href="tel:{{ .Site.Params.telefono }}" class="btn-tel">
-                📞 {{ .Site.Params.telefono }}
+                <i class="bi bi-telephone"></i> {{ .Site.Params.telefono }}
             </a>
             <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-wa">
-                WhatsApp
+                <i class="bi bi-whatsapp"></i> WhatsApp
             </a>
         </div>
     </div>
@@ -132,10 +132,10 @@
 
             <div class="about-buttons">
                 <a href="tel:{{ .Site.Params.telefono }}" class="btn-tel">
-                    📞 Llámanos ahora
+                    <i class="bi bi-telephone"></i> Llámanos ahora
                 </a>
                 <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-wa">
-                    WhatsApp
+                    <i class="bi bi-whatsapp"></i> WhatsApp
                 </a>
             </div>
         </div>
