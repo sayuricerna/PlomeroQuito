@@ -10,7 +10,7 @@
     url('{{ $hero.RelPermalink }}');">
 
     <div class="hero-content">
-        <h1>{{ .Title }}</h1>
+        <h1>{{ .Title }}</h1> 
         <p>{{ .Content }}</p>
 
         <div class="hero-buttons">
@@ -104,7 +104,114 @@
     </div>
 </section>
 
+ 
+ 
+ <!-- 5. ESTADÍSTICAS (Agregar después de trust-section) -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">230+</div>
+            <div class="stat-label">Emergencias Atendidas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Disponibilidad Total</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">30min</div>
+            <div class="stat-label">Tiempo de Respuesta</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Clientes Satisfechos</div>
+        </div>
+    </div>
+</section>
+ 
+<!-- 4. SECCIÓN DE CONFIANZA (Agregar después de precios) -->
+<section class="trust-section">
+    <h2>¿Por qué elegirnos?</h2>
+    
+    <div class="trust-grid">
+        <div class="trust-item">
+            <div class="trust-icon"><i class="bi bi-lightning"></i></div>
+            <h3>Atención Inmediata</h3>
+            <p>Llegamos en <strong>30-45 minutos</strong> en emergencias. Disponibles 24/7.</p>
+        </div>
+        
+        <div class="trust-item">
+            <div class="trust-icon"><i class="bi bi-shield-check"></i></div>
+            <h3>100% Garantizado</h3>
+            <p><strong>Garantía de calidad</strong> en todos nuestros trabajos.</p>
+        </div>
+        
+        <div class="trust-item">
+            <div class="trust-icon"><i class="bi bi-cash-stack"></i></div>
+            <h3>Precio Antes de Empezar</h3>
+            <p>Antes de empezar se realiza el diagnostico <strong>Presupuesto gratis</strong> y claro. Solo pagás si aceptás el precio.</p>
+        </div>
+        
+        <div class="trust-item">
+            <div class="trust-icon"><i class="bi bi-clock-history"></i></div>
+            <h3>Disponibles 24/7</h3>
+            <p>Atendemos <strong>365 días al año</strong>, incluidos domingos, feriados y madrugadas.</p>
+        </div>
+        
+        <div class="trust-item">
+            <div class="trust-icon"><i class="bi bi-wrench-adjustable-circle"></i></div>
+            <h3>Equipo Profesional</h3>
+            <p><strong>Años</strong> de experiencia. Plomeros capacitados y con herramientas profesionales.</p>
+        </div>
 
+    </div>
+</section>
+ 
+ 
+
+ 
+<!-- 6. TESTIMONIOS (Agregar después de stats-section) -->
+<section class="testimonials-section">
+    <h2>Lo Que Dicen Nuestros Clientes </h2>
+    
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Llamé a las 11 PM por una fuga urgente en la cocina. Llegaron en 40 minutos y resolvieron el problema sin romper nada. Excelente servicio, muy profesionales."</p>
+            <p class="testimonial-author">- María G., La Carolina</p>
+        </div>
+        
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Muy profesionales. Me dieron el precio antes de empezar y fue exactamente lo que me dijeron. No hay cobros ocultos. Lo recomiendo 100%."</p>
+            <p class="testimonial-author">- Carlos R., Cumbayá</p>
+        </div>
+        
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Destaparon mi baño en 20 minutos rápidos, limpios y con muy buen precio. Los vuelvo a llamar sin duda para cualquier emergencia."</p>
+            <p class="testimonial-author">- Ana P., Conocoto</p>
+        </div>
+        
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Repararon mi calefón un domingo a las 7 AM. Pensé que no iban a venir pero llegaron puntual. Servicio excelente y precio justo."</p>
+            <p class="testimonial-author">- Diego M., El Condado</p>
+        </div>
+        
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Instalaron toda la grifería de mi casa nueva. Trabajo impecable, todo quedó perfecto. Los recomiendo ampliamente."</p>
+            <p class="testimonial-author">- Patricia L., Tumbaco</p>
+        </div>
+        
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Detectaron una fuga oculta que nadie encontraba. Usaron un equipo especial y la repararon sin romper. Muy profesionales."</p>
+            <p class="testimonial-author">- Roberto S., Sangolquí</p>
+        </div>
+    </div>
+    
+</section>
 
 <section class="about-section" id="nosotros">
     <div class="about-container">
@@ -158,15 +265,113 @@
         Atendemos servicios de plomería en todos los sectores de Quito.
         Haz clic en tu zona para conocer más detalles.
     </p>
+<div class="sectors-list" id="sectorsList">
+    {{ range $index, $page := (where .Site.RegularPages "Section" "blogs") }}
+        <a href="{{ $page.Permalink }}" 
+           class="sector-link {{ if ge $index 5 }}hidden-sector{{ end }}">
+            {{ $page.Title }}
+        </a>
+    {{ end }}
+</div>
 
-    <div class="sectors-list">
+<button id="verMasBtn" class="btn-ver-mas">
+    Ver más <i class="bi bi-chevron-down"></i>
+</button>    <!-- <div class="sectors-list">
         {{ range (where .Site.RegularPages "Section" "blogs") }}
             <a href="{{ .Permalink }}" class="sector-link">
                 {{ .Title }}
             </a>
         {{ end }}
-    </div>
+    </div> -->
 </section>
 
+<script>
+let exitIntentShown = false;
+ 
+// Detectar cuando el mouse sale de la ventana
+document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 10 && !exitIntentShown) {
+        exitIntentShown = true;
+        showExitPopup();
+    }
+});
+ 
+// Detectar en móviles cuando hacen scroll hacia arriba rápidamente
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', function() {
+    if (window.innerWidth <= 768) {
+        if (lastScrollY > window.scrollY + 50 && window.scrollY < 100 && !exitIntentShown) {
+            exitIntentShown = true;
+            showExitPopup();
+        }
+    }
+    lastScrollY = window.scrollY;
+});
+ 
+function showExitPopup() {
+    const popup = document.createElement('div');
+    popup.className = 'exit-popup';
+    popup.innerHTML = `
+        <div class="exit-popup-content">
+            <button class="close-popup" onclick="this.parentElement.parentElement.remove()">×</button>
+            <h3><i class="bi bi-exclamation-octagon-fill"></i> ¡ESPERA! ¿Tienes una emergencia?</h3>
+            <p style="font-size: 18px; margin: 15px 0;"><strong>Llamanos AHORA</strong></p>
+            <p style="font-size: 28px; margin: 25px 0;">
+                <a href="tel:{{ .Site.Params.telefono }}" style="color: #25D366; font-weight: bold; text-decoration: none;">
+                    <i class="bi bi-telephone"></i> {{ .Site.Params.telefono }}
+                </a>
+            </p>
+            <p style="margin: 20px 0;">O escríbenos por WhatsApp para respuesta inmediata:</p>
+            <a href="https://wa.me/{{ .Site.Params.whatsapp }}?text=Hola,%20necesito%20un%20plomero%20urgente" class="btn-popup-whatsapp">
+                💬 Abrir WhatsApp Ahora
+            </a>
+            <p style="font-size: 14px; margin-top: 25px; color: #666; line-height: 1.6; justify-content: center;">
+                ✅ Presupuesto gratis sin compromiso<br>
+                ✅ Trabajo profesional sin daños<br>
+                ✅ Trabajos Garantizados<br>
+                ✅ Disponibles 24/7 en todo Quito
+            </p>
+        </div>
+    `;
+    document.body.appendChild(popup);
+    
+    setTimeout(() => popup.classList.add('show'), 100);
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("verMasBtn");
+    const hiddenItems = document.querySelectorAll(".hidden-sector");
 
+    let visible = 5;
+    const step = 5;
+
+    btn.addEventListener("click", () => {
+        let shown = 0;
+
+        hiddenItems.forEach((el) => {
+            if (el.style.display !== "block" && shown < step) {
+                el.style.display = "block";
+                shown++;
+            }
+        });
+
+        visible += step;
+
+        if (visible >= hiddenItems.length + 5) {
+            btn.style.display = "none";
+        }
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("verMasBtn");
+    const items = document.querySelectorAll(".sector-link");
+
+    if (items.length <= 5) {
+        btn.style.display = "none";
+    }
+});
+</script>
 {{ end }}

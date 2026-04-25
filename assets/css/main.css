@@ -67,8 +67,20 @@ body {
     color: white;
     font-weight: 700;
     letter-spacing: 0.5px;
+
+    display: flex;
+    align-items: center;
 }
 
+.logo-image {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 10px; /* 👈 aquí le das el “cuadrado bonito” */
+    background: rgb(255, 255, 255); /* 👈 esto arregla el fondo transparente */
+    padding: 4px; /* 👈 espacio interno */
+    margin-right: 10px;
+}
 .logo span {
     color: var(--amarillo);
 }
@@ -313,7 +325,7 @@ body {
     left: 0;
     width: 100%;
     height: 6px;
-    background: var(--amarillo);
+    background: #1E3A8A;
     border-radius: 22px 22px 0 0;
 }
 
@@ -486,7 +498,28 @@ SOBRE NOSOTROS
 /* =========================
    SECTORES SEO
 ========================= */
+.btn-ver-mas {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background: var(--azul-oscuro);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.btn-ver-mas:hover {
+    background: var(--amarillo-hover);
+    transform: translateY(-2px);
+}
+
+.btn-ver-mas:active {
+    transform: scale(0.98);
+}
 .seo-sectors {
     padding: 90px 8%;
     background: var(--gris-fondo);
@@ -530,6 +563,7 @@ SOBRE NOSOTROS
     color: #000;
     transform: translateY(-2px);
 }
+
 
 
 /* =========================
@@ -985,3 +1019,299 @@ SOBRE NOSOTROS
 }
 
 
+/* Mejoras de rendimiento y usabilidad */
+/* ===================================
+   MEJORAS DE CONVERSIÓN - PLOMERO QUITO
+   Agregar al final de assets/css/main.css
+   =================================== */
+
+
+/* 4. SECCIÓN DE CONFIANZA */
+.trust-section {
+    padding: 60px 20px;
+    background: white;
+    text-align: center;
+}
+
+.trust-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trust-item {
+    text-align: center;
+}
+
+.trust-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.trust-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.trust-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 5. TESTIMONIOS */
+.testimonials-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+.hidden-sector {
+    display: none;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.testimonial {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cta-after-testimonials {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-after-testimonials h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-big-call,
+.btn-big-whatsapp {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-big-call {
+    background: #ff4444;
+    color: white;
+}
+
+.btn-big-call:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.btn-big-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn-big-whatsapp:hover {
+    background: #20BA5A;
+    transform: scale(1.05);
+}
+
+/* 6. ESTADÍSTICAS */
+.stats-section {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #001557,var(--azul-oscuro)); /* 👈 clave */
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* 7. POPUP DE SALIDA */
+.exit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.exit-popup.show {
+    opacity: 1;
+}
+
+.exit-popup-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: slideDown 0.5s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-popup:hover {
+    color: #333;
+}
+
+.exit-popup h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.btn-popup-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-popup-whatsapp:hover {
+    background: #20BA5A;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .floating-call-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .emergency-banner {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .pricing-section h2,
+    .trust-section h2,
+    .testimonials-section h2 {
+        font-size: 24px;
+    }
+    
+    .price {
+        font-size: 28px;
+    }
+    
+    .trust-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-big-call,
+    .btn-big-whatsapp {
+        width: 100%;
+    }
+    
+    .exit-popup-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+}
